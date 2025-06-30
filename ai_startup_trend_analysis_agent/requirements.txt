@@ -1,0 +1,19 @@
+# Core dependencies
+streamlit==1.44.1
+agno==1.2.13
+
+# Web search and news tools
+duckduckgo-search>=6.3.7
+newspaper4k>=0.9.3.1
+lxml-html-clean>=0.4.1
+
+# OpenAI/OpenRouter support (included in agno)
+openai>=1.0.0
+
+# Additional dependencies for agno
+typing-extensions>=4.0.0
+pydantic>=2.0.0
+httpx>=0.24.0
+
+# Built-in Python modules (no installation needed):
+# logging

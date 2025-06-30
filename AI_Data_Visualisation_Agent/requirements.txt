@@ -1,0 +1,23 @@
+# Core dependencies
+streamlit==1.44.1
+pandas>=2.0.0
+
+# AI/LLM integration
+openai>=1.0.0
+
+# Code execution sandbox
+e2b-code-interpreter==1.0.3
+e2b==1.0.5
+
+# Image processing and visualization
+Pillow>=10.4.0
+matplotlib>=3.7.0
+plotly>=5.0.0
+
+# Data processing utilities
+typing-extensions>=4.0.0
+
+# Built-in Python modules (no installation needed):
+# os, json, re, sys, io, contextlib, warnings, base64
+# from typing import Optional, List, Any, Tuple
+# from io import BytesIO

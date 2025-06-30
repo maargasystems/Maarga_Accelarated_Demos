@@ -1,0 +1,4 @@
+streamlit 
+agno
+openai==1.91.0
+google-search-results
