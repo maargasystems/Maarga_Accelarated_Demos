@@ -1,148 +1,15 @@
 services:
-  data-analyst-agent:
-    build:
-      context: ./Data_Analyst_Agent
-      dockerfile: ../Dockerfile
+  ai-agent-hub:
+    build: .
+    env_file: .env
+    environment:
+      PORT: 8500
     ports:
-      - "8501:8501"
+      - "8500:8500"
     volumes:
-      - ./Data_Analyst_Agent:/app
+      - .:/app
     command: >
       /bin/sh -c "
       pip install --no-cache-dir -r requirements.txt &&
-      streamlit run app.py --server.port=8501 --server.address=0.0.0.0
+      streamlit run app.py --server.port=8500 --server.address=0.0.0.0
       "
-  ai-travel-planner:
-    build:
-      context: ./AI_Travel_Planner
-      dockerfile: ../Dockerfile
-    ports:
-      - "8502:8502"
-    volumes:
-      - ./AI_Travel_Planner:/app
-    command: >
-      /bin/sh -c "
-      pip install --no-cache-dir -r requirements.txt &&
-      streamlit run app.py --server.port=8502 --server.address=0.0.0.0
-      "
-  breakup-recovery-agent:
-    build:
-      context: ./BreakUp_Recovery_Agent
-      dockerfile: ../Dockerfile
-    ports:
-      - "8503:8503"
-    volumes:
-      - ./BreakUp_Recovery_Agent:/app
-    command: >
-      /bin/sh -c "
-      pip install --no-cache-dir -r requirements.txt &&
-      streamlit run app.py --server.port=8503 --server.address=0.0.0.0
-      "
-  ai-medical-imaging-agent:
-    build:
-      context: ./ai_medical_imaging_agent
-      dockerfile: ../Dockerfile
-    ports:
-      - "8504:8504"
-    volumes:
-      - ./ai_medical_imaging_agent:/app
-    command: >
-      /bin/sh -c "
-      pip install --no-cache-dir -r requirements.txt &&
-      streamlit run app.py --server.port=8504 --server.address=0.0.0.0"
-  ai-music-generator-agent:
-    build:
-      context: ./ai_music_generator_agent
-      dockerfile: ../Dockerfile
-    ports:
-      - "8505:8505"
-    volumes:
-      - ./ai_music_generator_agent:/app
-    command: >
-      /bin/sh -c "
-      pip install --no-cache-dir -r requirements.txt &&
-      streamlit run app.py --server.port=8505 --server.address=0.0.0.0"
-  ai-data-visualisation-agent:
-    build:
-      context: ./AI_Data_Visualisation_Agent
-      dockerfile: ../Dockerfile
-    ports:
-      - "8506:8506"
-    volumes:
-      - ./AI_Data_Visualisation_Agent:/app
-    command: >
-      /bin/sh -c "
-      pip install --no-cache-dir -r requirements.txt &&
-      streamlit run app.py --server.port=8506 --server.address=0.0.0.0"
-  ai-startup-trend-analysis-agent:
-    build:
-      context: ./ai_startup_trend_analysis_agent
-      dockerfile: ../Dockerfile
-    ports:
-      - "8507:8507"
-    volumes:
-      - ./ai_startup_trend_analysis_agent:/app
-    command: >
-      /bin/sh -c "
-      pip install --no-cache-dir -r requirements.txt &&
-      streamlit run app.py --server.port=8507 --server.address=0.0.0.0"
-  xai-finance-agent:
-    build:
-      context: ./xai_finance_agent
-      dockerfile: ../Dockerfile
-    ports:
-      - "8508:8508"
-    volumes:
-      - ./xai_finance_agent:/app
-    command: >
-      /bin/sh -c "
-      pip install --no-cache-dir -r requirements.txt &&
-      streamlit run app.py --server.port=8508 --server.address=0.0.0.0"
-  openai-research-agent:
-    build:
-      context: ./opeani_research_agent
-      dockerfile: ../Dockerfile
-    ports:
-      - "8509:8509"
-    volumes:
-      - ./opeani_research_agent:/app
-    command: >
-      /bin/sh -c "
-      pip install --no-cache-dir -r requirements.txt &&
-      streamlit run app.py --server.port=8509 --server.address=0.0.0.0"
-  ai-blog-to-podcast-agent:
-    build:
-      context: ./ai_blog_to_podcast_agent
-      dockerfile: ../Dockerfile
-    ports:
-      - "8510:8510"
-    volumes:
-      - ./ai_blog_to_podcast_agent:/app
-    command: >
-      /bin/sh -c "
-      pip install --no-cache-dir -r requirements.txt &&
-      streamlit run app.py --server.port=8510 --server.address=0.0.0.0"
-  multimodal-ai-agent:
-    build:
-      context: ./multimodal_ai_agent
-      dockerfile: ../Dockerfile
-    ports:
-      - "8511:8511"
-    volumes:
-      - ./multimodal_ai_agent:/app
-    command: >
-      /bin/sh -c "
-      pip install --no-cache-dir -r requirements.txt &&
-      streamlit run app.py --server.port=8511 --server.address=0.0.0.0"
-  multimodal-ai-agent-image:
-    build:
-      context: ./multimodal_ai_agent_image
-      dockerfile: ../Dockerfile
-    ports:
-      - "8512:8512"
-    volumes:
-      - ./multimodal_ai_agent_image:/app
-    command: >
-      /bin/sh -c "
-      pip install --no-cache-dir -r requirements.txt &&
-      streamlit run app.py --server.port=8512 --server.address=0.0.0.0"
