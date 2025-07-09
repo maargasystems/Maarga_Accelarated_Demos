@@ -38,9 +38,20 @@ AGENT_NAMES = [
     "🧠 Image Reasoner",
 ]
 
+# Use a more robust way to handle the logo path
+try:
+    logo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "maarga_logo.png")
+    if not os.path.exists(logo_path):
+        # Try lowercase extension as fallback
+        logo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "maarga_logo.PNG")
+except Exception as e:
+    st.warning("Logo file not found. The application will continue without the logo.")
+    logo_path = None
+
 with st.sidebar:
-    st.image("maarga_logo.png", width=200)  # larger logo
-    st.header("🗂️ Maarga Agents")
+    if logo_path and os.path.exists(logo_path):
+        st.image(logo_path, width=200)  # larger logo
+    st.header("🗂️ Maarga Agents")
     selected = st.radio("Choose an agent", AGENT_NAMES, key="agent_selector")
     st.markdown("---")
     st.caption("Scroll if list overflows")
